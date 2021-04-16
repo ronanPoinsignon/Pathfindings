@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="430.0" minWidth="600.0" prefHeight="632.0" prefWidth="806.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prog.graphique.controller.Controller">
+   <right>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <top>
+            <ComboBox fx:id="comboBox" prefWidth="150.0" promptText="Algorithme" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets top="10.0" />
+               </BorderPane.margin></ComboBox>
+         </top>
+         <center>
+            <GridPane fx:id="gridPaneCase" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ComboBox fx:id="comboBoxStratFind" prefWidth="150.0" promptText="Stratégie" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Slider fx:id="sliderTime" majorTickUnit="250.0" max="1000.0" minorTickCount="4" showTickLabels="true" showTickMarks="true" value="100.0" GridPane.rowIndex="1">
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </Slider>
+               </children>
+            </GridPane>
+         </center>
+         <bottom>
+            <Button mnemonicParsing="false" onAction="#start" text="Start" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="50.0" />
+               </BorderPane.margin></Button>
+         </bottom>
+      </BorderPane>
+   </right>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" text="Charger" />
+              <MenuItem mnemonicParsing="false" text="Enregister sous" />
+                  <MenuItem mnemonicParsing="false" text="Enregistrer" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#showHelp" text="Aide" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane fx:id="map">
+      </GridPane>
+            <Canvas fx:id="canvas" height="200.0" mouseTransparent="true" width="200.0" />
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>
